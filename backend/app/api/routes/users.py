@@ -49,7 +49,7 @@ def read_users(session: SessionDep, skip: int = 0, limit: int = 100) -> Any:
 
 
 @router.post(
-    "/", dependencies=[Depends(get_current_active_superuser)], response_model=UserPublic
+    "/", dependencies=[Depends(get_current_active_superuser)], response_model=UserPublic, summery="Создать нового пользователя"
 )
 def create_user(*, session: SessionDep, user_in: UserCreate) -> Any:
     """
@@ -102,7 +102,7 @@ def update_password_me(
     *, session: SessionDep, body: UpdatePassword, current_user: CurrentUser
 ) -> Any:
     """
-    Обновить свой собственный пароль.
+    Обновить свой собственный пароль
     """
     if not verify_password(body.current_password, current_user.hashed_password):
         raise HTTPException(status_code=400, detail="Incorrect password")
@@ -120,7 +120,7 @@ def update_password_me(
 @router.get("/me", response_model=UserPublic)
 def read_user_me(current_user: CurrentUser) -> Any:
     """
-    Получить текущего пользователя.
+    Получить текущего пользователя
     """
     return current_user
 
@@ -128,7 +128,7 @@ def read_user_me(current_user: CurrentUser) -> Any:
 @router.delete("/me", response_model=Message)
 def delete_user_me(session: SessionDep, current_user: CurrentUser) -> Any:
     """
-    Удалите собственного пользователя.
+    Удалите собственного пользователя
     """
     if current_user.is_superuser:
         raise HTTPException(
@@ -142,7 +142,7 @@ def delete_user_me(session: SessionDep, current_user: CurrentUser) -> Any:
 @router.post("/signup", response_model=UserPublic)
 def register_user(session: SessionDep, user_in: UserRegister) -> Any:
     """
-    Создайте нового пользователя без необходимости входить в систему.
+    Создайте нового пользователя без необходимости входить в систему
     """
     user = crud.get_user_by_email(session=session, email=user_in.email)
     if user:
@@ -160,7 +160,7 @@ def read_user_by_id(
     user_id: uuid.UUID, session: SessionDep, current_user: CurrentUser
 ) -> Any:
     """
-    Найдите конкретного пользователя по id.
+    Найдите конкретного пользователя по id
     """
     user = session.get(User, user_id)
     if user == current_user:
@@ -185,7 +185,7 @@ def update_user(
     user_in: UserUpdate,
 ) -> Any:
     """
-    Обновите пользователя.
+    Обновите пользователя
     """
 
     db_user = session.get(User, user_id)
@@ -210,11 +210,11 @@ def delete_user(
     session: SessionDep, current_user: CurrentUser, user_id: uuid.UUID
 ) -> Message:
     """
-    Удалите пользователя.
+    Удалите пользователя
     """
     user = session.get(User, user_id)
     if not user:
-        raise HTTPException(status_code=404, detail="User not found")
+        raise HTTPException(status_code=404, detail="Пользователь не найден")
     if user == current_user:
         raise HTTPException(
             status_code=403, detail="Суперпользователям не разрешается удалять самих себя"
