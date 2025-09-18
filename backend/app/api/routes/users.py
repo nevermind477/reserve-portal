@@ -33,12 +33,9 @@ router = APIRouter(prefix="/users", tags=["Пользователи"])
     "/",
     dependencies=[Depends(get_current_active_superuser)],
     response_model=UsersPublic,
+    summary="Получить список пользователей"
 )
 def read_users(session: SessionDep, skip: int = 0, limit: int = 100) -> Any:
-    """
-    Извлечь пользователей.
-    """
-
     count_statement = select(func.count()).select_from(User)
     count = session.exec(count_statement).one()
 
@@ -49,12 +46,12 @@ def read_users(session: SessionDep, skip: int = 0, limit: int = 100) -> Any:
 
 
 @router.post(
-    "/", dependencies=[Depends(get_current_active_superuser)], response_model=UserPublic, summery="Создать нового пользователя"
+    "/",
+    dependencies=[Depends(get_current_active_superuser)],
+    response_model=UserPublic,
+    summary="Создать нового пользователя (Admin only)"
 )
 def create_user(*, session: SessionDep, user_in: UserCreate) -> Any:
-    """
-    Создать нового пользователя.
-    """
     user = crud.get_user_by_email(session=session, email=user_in.email)
     if user:
         raise HTTPException(
@@ -75,14 +72,14 @@ def create_user(*, session: SessionDep, user_in: UserCreate) -> Any:
     return user
 
 
-@router.patch("/me", response_model=UserPublic)
+@router.patch(
+    "/me",
+    response_model=UserPublic,
+    summary="Обновить данные текущего пользователя"
+)
 def update_user_me(
     *, session: SessionDep, user_in: UserUpdateMe, current_user: CurrentUser
 ) -> Any:
-    """
-    Обновить собственного пользователя.
-    """
-
     if user_in.email:
         existing_user = crud.get_user_by_email(session=session, email=user_in.email)
         if existing_user and existing_user.id != current_user.id:
@@ -97,13 +94,14 @@ def update_user_me(
     return current_user
 
 
-@router.patch("/me/password", response_model=Message)
+@router.patch(
+    "/me/password",
+    response_model=Message,
+    summary="Изменить пароль текущего пользователя"
+)
 def update_password_me(
     *, session: SessionDep, body: UpdatePassword, current_user: CurrentUser
 ) -> Any:
-    """
-    Обновить свой собственный пароль
-    """
     if not verify_password(body.current_password, current_user.hashed_password):
         raise HTTPException(status_code=400, detail="Incorrect password")
     if body.current_password == body.new_password:
@@ -117,19 +115,21 @@ def update_password_me(
     return Message(message="Пароль успешно обновлен")
 
 
-@router.get("/me", response_model=UserPublic)
+@router.get(
+    "/me",
+    response_model=UserPublic,
+    summary="Получить данные текущего пользователя"
+)
 def read_user_me(current_user: CurrentUser) -> Any:
-    """
-    Получить текущего пользователя
-    """
     return current_user
 
 
-@router.delete("/me", response_model=Message)
+@router.delete(
+    "/me",
+    response_model=Message,
+    summary="Удалить текущего пользователя"
+)
 def delete_user_me(session: SessionDep, current_user: CurrentUser) -> Any:
-    """
-    Удалите собственного пользователя
-    """
     if current_user.is_superuser:
         raise HTTPException(
             status_code=403, detail="Суперпользователям не разрешается удалять самих себя"
@@ -139,11 +139,12 @@ def delete_user_me(session: SessionDep, current_user: CurrentUser) -> Any:
     return Message(message="Пользователь успешно удален")
 
 
-@router.post("/signup", response_model=UserPublic)
+@router.post(
+    "/signup",
+    response_model=UserPublic,
+    summary="Регистрация нового пользователя"
+)
 def register_user(session: SessionDep, user_in: UserRegister) -> Any:
-    """
-    Создайте нового пользователя без необходимости входить в систему
-    """
     user = crud.get_user_by_email(session=session, email=user_in.email)
     if user:
         raise HTTPException(
@@ -155,13 +156,14 @@ def register_user(session: SessionDep, user_in: UserRegister) -> Any:
     return user
 
 
-@router.get("/{user_id}", response_model=UserPublic)
+@router.get(
+    "/{user_id}",
+    response_model=UserPublic,
+    summary="Получить пользователя по ID"
+)
 def read_user_by_id(
     user_id: uuid.UUID, session: SessionDep, current_user: CurrentUser
 ) -> Any:
-    """
-    Найдите конкретного пользователя по id
-    """
     user = session.get(User, user_id)
     if user == current_user:
         return user
@@ -177,6 +179,7 @@ def read_user_by_id(
     "/{user_id}",
     dependencies=[Depends(get_current_active_superuser)],
     response_model=UserPublic,
+    summary="Обновить данные пользователя по ID (Admin only)"
 )
 def update_user(
     *,
@@ -184,10 +187,6 @@ def update_user(
     user_id: uuid.UUID,
     user_in: UserUpdate,
 ) -> Any:
-    """
-    Обновите пользователя
-    """
-
     db_user = session.get(User, user_id)
     if not db_user:
         raise HTTPException(
@@ -205,13 +204,14 @@ def update_user(
     return db_user
 
 
-@router.delete("/{user_id}", dependencies=[Depends(get_current_active_superuser)])
+@router.delete(
+    "/{user_id}",
+    dependencies=[Depends(get_current_active_superuser)],
+    summary="Удалить пользователя по ID (Admin only)",
+)
 def delete_user(
     session: SessionDep, current_user: CurrentUser, user_id: uuid.UUID
 ) -> Message:
-    """
-    Удалите пользователя
-    """
     user = session.get(User, user_id)
     if not user:
         raise HTTPException(status_code=404, detail="Пользователь не найден")
