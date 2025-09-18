@@ -1,29 +1,29 @@
-# Security Policy
+# Политика безопасности
 
-Security is very important for this project and its community. 🔒
+Безопасность очень важна для этого проекта и его сообщества. 🔒
 
-Learn more about it below. 👇
+Подробнее об этом читайте ниже. 👇
 
-## Versions
+## Версии
 
-The latest version or release is supported.
+Поддерживается последняя версия приложения.
 
-You are encouraged to write tests for your application and update your versions frequently after ensuring that your tests are passing. This way you will benefit from the latest features, bug fixes, and **security fixes**.
+Рекомендуется писать тесты для своего приложения и регулярно обновлять версии, предварительно убедившись в их успешном прохождении. Таким образом, вы сможете воспользоваться новейшими функциями, исправлениями ошибок и ** исправлениями безопасности **.
 
-## Reporting a Vulnerability
+## Сообщение об уязвимости
 
-If you think you found a vulnerability, and even if you are not sure about it, please report it right away by sending an email to: security@tiangolo.com. Please try to be as explicit as possible, describing all the steps and example code to reproduce the security issue.
+Если вы считаете, что обнаружили уязвимость, и даже если вы не уверены в этом, пожалуйста, немедленно сообщите об этом, отправив электронное письмо по адресу: security@tiangolo.com. Пожалуйста, постарайтесь быть как можно более понятными, опишите все шаги и пример кода, чтобы воспроизвести проблему безопасности.
 
-I (the author, [@tiangolo](https://twitter.com/tiangolo)) will review it thoroughly and get back to you.
+Я (автор, [@nevermind477](https://t.me/nevermind477)) тщательно изучу это и свяжусь с вами.
 
-## Public Discussions
+## Публичные обсуждения
 
-Please restrain from publicly discussing a potential security vulnerability. 🙊
+Пожалуйста, воздержитесь от публичного обсуждения потенциальной уязвимости в системе безопасности. 🙊
 
-It's better to discuss privately and try to find a solution first, to limit the potential impact as much as possible.
+Лучше обсудить это в частном порядке и попытаться сначала найти решение, чтобы максимально ограничить потенциальное воздействие.
 
 ---
 
-Thanks for your help!
+Спасибо за вашу помощь!
 
-The community and I thank you for that. 🙇
+Я и сообщество благодарим вас за это. 🙇
