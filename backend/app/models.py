@@ -10,6 +10,19 @@ class UserBase(SQLModel):
     is_active: bool = True
     is_superuser: bool = False
     full_name: str | None = Field(default=None, max_length=255)
+    photo_path: str | None = Field(default=None, max_length=500, description="Путь к фото")
+    first_name: str | None = Field(default=None, max_length=50, description="Имя")
+    last_name: str | None = Field(default=None, max_length=50,description="Фамилия")
+    patronymic: str | None = Field(default=None, max_length=50, description="Отчество")
+    birthday: str | None = Field(default=None, max_length=5, description="День рождения в формате DD-MM")
+    phone: str | None = Field(default=None, max_length=12, description="Телефон в формате +7XXXXXXXXXX")
+    position: str | None = Field(default=None, max_length=255, description="Должность")
+    computer_number: str | None = Field(default=None, max_length=50, description="Номер компьютера")
+    status: str | None = Field(default=None, max_length=50,
+                               description="Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)")
+    project: str | None = Field(default=None, max_length=255, description="Проект")
+    department: str | None = Field(default=None, max_length=255, description="Отдел")
+    manager: str | None = Field(default=None, max_length=255, description="Непосредственный руководитель")
 
 
 # Properties to receive via API on creation
@@ -21,6 +34,19 @@ class UserRegister(SQLModel):
     email: EmailStr = Field(max_length=255)
     password: str = Field(min_length=8, max_length=40)
     full_name: str | None = Field(default=None, max_length=255)
+    photo_path: str | None = Field(default=None, max_length=500, description="Путь к фото")
+    first_name: str | None = Field(default=None, max_length=50, description="Имя")
+    last_name: str | None = Field(default=None, max_length=50,description="Фамилия")
+    patronymic: str | None = Field(default=None, max_length=50, description="Отчество")
+    birthday: str | None = Field(default=None, max_length=5, description="День рождения в формате DD-MM")
+    phone: str | None = Field(default=None, max_length=12, description="Телефон в формате +7XXXXXXXXXX")
+    position: str | None = Field(default=None, max_length=255, description="Должность")
+    computer_number: str | None = Field(default=None, max_length=50, description="Номер компьютера")
+    status: str | None = Field(default=None, max_length=50,
+                               description="Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)")
+    project: str | None = Field(default=None, max_length=255, description="Проект")
+    department: str | None = Field(default=None, max_length=255, description="Отдел")
+    manager: str | None = Field(default=None, max_length=255, description="Непосредственный руководитель")
 
 
 # Properties to receive via API on update, all are optional
@@ -31,6 +57,19 @@ class UserUpdate(UserBase):
 
 class UserUpdateMe(SQLModel):
     full_name: str | None = Field(default=None, max_length=255)
+    photo_path: str | None = Field(default=None, max_length=500, description="Путь к фото")
+    first_name: str | None = Field(default=None, max_length=50, description="Имя")
+    last_name: str | None = Field(default=None, max_length=50,description="Фамилия")
+    patronymic: str | None = Field(default=None, max_length=50, description="Отчество")
+    birthday: str | None = Field(default=None, max_length=5, description="День рождения в формате DD-MM")
+    phone: str | None = Field(default=None, max_length=12, description="Телефон в формате +7XXXXXXXXXX")
+    position: str | None = Field(default=None, max_length=255, description="Должность")
+    computer_number: str | None = Field(default=None, max_length=50, description="Номер компьютера")
+    status: str | None = Field(default=None, max_length=50,
+                               description="Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)")
+    project: str | None = Field(default=None, max_length=255, description="Проект")
+    department: str | None = Field(default=None, max_length=255, description="Отдел")
+    manager: str | None = Field(default=None, max_length=255, description="Непосредственный руководитель")
     email: EmailStr | None = Field(default=None, max_length=255)
 
 
