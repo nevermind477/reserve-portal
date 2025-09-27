@@ -1,3 +1,4 @@
+/* Сменить только цвета*/
 import { IconButton } from "@chakra-ui/react"
 import { BsThreeDotsVertical } from "react-icons/bs"
 import type { UserPublic } from "@/client"

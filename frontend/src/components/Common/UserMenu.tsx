@@ -1,3 +1,4 @@
+/* Сменить только цвета и перевод */
 import { Box, Button, Flex, Text } from "@chakra-ui/react"
 import { Link } from "@tanstack/react-router"
 import { FaUserAstronaut } from "react-icons/fa"
