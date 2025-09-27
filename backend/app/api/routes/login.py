@@ -18,10 +18,10 @@ from app.utils import (
     verify_password_reset_token,
 )
 
-router = APIRouter(tags=["login"])
+router = APIRouter(tags=["Авторизация"])
 
 
-@router.post("/login/access-token")
+@router.post("/login/access-token", summary="Войти и получить токен доступа")
 def login_access_token(
     session: SessionDep, form_data: Annotated[OAuth2PasswordRequestForm, Depends()]
 ) -> Token:
@@ -43,7 +43,7 @@ def login_access_token(
     )
 
 
-@router.post("/login/test-token", response_model=UserPublic)
+@router.post("/login/test-token", response_model=UserPublic, summary ="Тестовый токен")
 def test_token(current_user: CurrentUser) -> Any:
     """
     Test access token
@@ -51,7 +51,7 @@ def test_token(current_user: CurrentUser) -> Any:
     return current_user
 
 
-@router.post("/password-recovery/{email}")
+@router.post("/password-recovery/{email}", summary = 'Восстановление пароля по электронной почте')
 def recover_password(email: str, session: SessionDep) -> Message:
     """
     Password Recovery
@@ -75,7 +75,7 @@ def recover_password(email: str, session: SessionDep) -> Message:
     return Message(message="Password recovery email sent")
 
 
-@router.post("/reset-password/")
+@router.post("/reset-password/", summary = 'Сброс пароля')
 def reset_password(session: SessionDep, body: NewPassword) -> Message:
     """
     Reset password
@@ -102,6 +102,7 @@ def reset_password(session: SessionDep, body: NewPassword) -> Message:
     "/password-recovery-html-content/{email}",
     dependencies=[Depends(get_current_active_superuser)],
     response_class=HTMLResponse,
+    summary="HTML Контент для восстановления пароля (Admin only)"
 )
 def recover_password_html_content(email: str, session: SessionDep) -> Any:
     """
