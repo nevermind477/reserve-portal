@@ -13,7 +13,7 @@ const items = [
   { icon: FiSettings, title: "Команда", path: "/" },
   { icon: FiSettings, title: "Документация", path: "/" },
   { icon: FiSettings, title: "Новости", path: "/" },
-  { icon: FiSettings, title: "О сайте", path: "/" },
+  { icon: FiSettings, title: "О сайте", path: "/about" },
 ]
 
 interface NavbarItemsProps {
