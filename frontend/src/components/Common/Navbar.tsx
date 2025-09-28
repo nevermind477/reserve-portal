@@ -29,7 +29,7 @@ function Navbar() {
     >
       {/* Логотип слева */}
       <Link to="/">
-        <Image src={logoSrc} alt="Logo" maxW="3xs" p={2} />
+        <Image src={logoSrc} alt="Logo" maxW="xs" p={2} />
       </Link>
 
       {/* Центр: пункты меню */}

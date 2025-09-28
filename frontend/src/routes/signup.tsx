@@ -6,6 +6,7 @@ import {
 } from "@tanstack/react-router"
 import { type SubmitHandler, useForm } from "react-hook-form"
 import { FiLock, FiUser } from "react-icons/fi"
+import { useTheme } from "next-themes"   // 👈 добавляем
 
 import type { UserRegister } from "@/client"
 import { Button } from "@/components/ui/button"
@@ -14,7 +15,10 @@ import { InputGroup } from "@/components/ui/input-group"
 import { PasswordInput } from "@/components/ui/password-input"
 import useAuth, { isLoggedIn } from "@/hooks/useAuth"
 import { confirmPasswordRules, emailPattern, passwordRules } from "@/utils"
-import Logo from "/assets/images/fastapi-logo.svg"
+
+// 👇 импортируем два варианта логотипа
+import LogoBlack from "/assets/images/navlogo-black.svg"
+import LogoWhite from "/assets/images/navlogo-white.svg"
 
 export const Route = createFileRoute("/signup")({
   component: SignUp,
@@ -49,6 +53,10 @@ function SignUp() {
     },
   })
 
+  const { theme, resolvedTheme } = useTheme()
+  const currentTheme = theme === "system" ? resolvedTheme : theme
+  const logoSrc = currentTheme === "dark" ? LogoWhite : LogoBlack
+
   const onSubmit: SubmitHandler<UserRegisterForm> = (data) => {
     signUpMutation.mutate(data)
   }
@@ -66,10 +74,10 @@ function SignUp() {
         centerContent
       >
         <Image
-          src={Logo}
+          src={logoSrc}   // 👈 логотип меняется в зависимости от темы
           alt="FastAPI logo"
           height="auto"
-          maxW="2xs"
+          maxW="xs"
           alignSelf="center"
           mb={4}
         />
