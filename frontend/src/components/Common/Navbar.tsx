@@ -14,7 +14,7 @@ function Navbar() {
       justify="space-between"
       align="center"
       position="sticky"
-      color="white"
+      color="inherit"
       bg="bg.muted"
       w="100%"
       top={0}
