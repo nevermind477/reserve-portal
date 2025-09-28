@@ -1,12 +1,19 @@
 import { Flex, Image, useBreakpointValue, Box } from "@chakra-ui/react"
 import { Link } from "@tanstack/react-router"
+import { useTheme } from "next-themes"
 
-import Logo from "/assets/images/fastapi-logo.svg"
+import LogoBlack from "/assets/images/navlogo-black.svg"
+import LogoWhite from "/assets/images/navlogo-white.svg"
 import UserMenu from "./UserMenu"
-import NavbarItems from "./NavbarItems" // импортируем список пунктов
+import NavbarItems from "./NavbarItems"
 
 function Navbar() {
   const display = useBreakpointValue({ base: "none", md: "flex" })
+  const { theme, resolvedTheme } = useTheme()
+
+  // resolvedTheme учитывает system-настройку
+  const currentTheme = theme === "system" ? resolvedTheme : theme
+  const logoSrc = currentTheme === "dark" ? LogoWhite : LogoBlack
 
   return (
     <Flex
@@ -22,7 +29,7 @@ function Navbar() {
     >
       {/* Логотип слева */}
       <Link to="/">
-        <Image src={Logo} alt="Logo" maxW="3xs" p={2} />
+        <Image src={logoSrc} alt="Logo" maxW="3xs" p={2} />
       </Link>
 
       {/* Центр: пункты меню */}
