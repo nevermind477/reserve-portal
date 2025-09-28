@@ -20,12 +20,21 @@ export const system = createSystem(defaultConfig, {
     tokens: {
       colors: {
         ui: {
-          main: { value: "#009688" },
+          main: { value: "#808080" }, // серый цвет
         },
       },
     },
     recipes: {
       button: buttonRecipe,
+      switch: { base: { colorPalette: "gray" } },
+      checkbox: { base: { colorPalette: "gray" } },
+      radio: { base: { colorPalette: "gray" } },
+      input: { base: { colorPalette: "gray" } },
+      textarea: { base: { colorPalette: "gray" } },
+      select: { base: { colorPalette: "gray" } },
+      slider: { base: { colorPalette: "gray" } },
+      tag: { base: { colorPalette: "gray" } },
+      badge: { base: { colorPalette: "gray" } },
     },
   },
 })
