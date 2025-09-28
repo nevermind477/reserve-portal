@@ -6,6 +6,7 @@ import {
 } from "@tanstack/react-router"
 import { type SubmitHandler, useForm } from "react-hook-form"
 import { FiLock, FiMail } from "react-icons/fi"
+import { useTheme } from "next-themes"   // 👈 добавляем
 
 import type { Body_login_login_access_token as AccessToken } from "@/client"
 import { Button } from "@/components/ui/button"
@@ -13,8 +14,11 @@ import { Field } from "@/components/ui/field"
 import { InputGroup } from "@/components/ui/input-group"
 import { PasswordInput } from "@/components/ui/password-input"
 import useAuth, { isLoggedIn } from "@/hooks/useAuth"
-import Logo from "/assets/images/fastapi-logo.svg"
 import { emailPattern, passwordRules } from "../utils"
+
+// 👇 импортируем два варианта логотипа
+import LogoBlack from "/assets/images/navlogo-black.svg"
+import LogoWhite from "/assets/images/navlogo-white.svg"
 
 export const Route = createFileRoute("/login")({
   component: Login,
@@ -42,6 +46,10 @@ function Login() {
     },
   })
 
+  const { theme, resolvedTheme } = useTheme()
+  const currentTheme = theme === "system" ? resolvedTheme : theme
+  const logoSrc = currentTheme === "dark" ? LogoWhite : LogoBlack
+
   const onSubmit: SubmitHandler<AccessToken> = async (data) => {
     if (isSubmitting) return
 
@@ -66,10 +74,10 @@ function Login() {
       centerContent
     >
       <Image
-        src={Logo}
+        src={logoSrc}   // 👈 логотип теперь зависит от темы
         alt="FastAPI logo"
         height="auto"
-        maxW="2xs"
+        maxW="xs"
         alignSelf="center"
         mb={4}
       />
@@ -110,3 +118,5 @@ function Login() {
     </Container>
   )
 }
+
+export default Login
