@@ -118,7 +118,7 @@ export class ItemsService {
 
 export class LoginService {
     /**
-     * Login Access Token
+     * Войти и получить токен доступа
      * OAuth2 compatible token login, get an access token for future requests
      * @param data The data for the request.
      * @param data.formData
@@ -138,7 +138,7 @@ export class LoginService {
     }
     
     /**
-     * Test Token
+     * Тестовый токен
      * Test access token
      * @returns UserPublic Successful Response
      * @throws ApiError
@@ -151,7 +151,7 @@ export class LoginService {
     }
     
     /**
-     * Recover Password
+     * Восстановление пароля по электронной почте
      * Password Recovery
      * @param data The data for the request.
      * @param data.email
@@ -172,7 +172,7 @@ export class LoginService {
     }
     
     /**
-     * Reset Password
+     * Сброс пароля
      * Reset password
      * @param data The data for the request.
      * @param data.requestBody
@@ -192,7 +192,7 @@ export class LoginService {
     }
     
     /**
-     * Recover Password Html Content
+     * HTML Контент для восстановления пароля (Admin only)
      * HTML Content for Password Recovery
      * @param data The data for the request.
      * @param data.email
@@ -237,8 +237,7 @@ export class PrivateService {
 
 export class UsersService {
     /**
-     * Read Users
-     * Retrieve users.
+     * Получить список пользователей
      * @param data The data for the request.
      * @param data.skip
      * @param data.limit
@@ -260,8 +259,7 @@ export class UsersService {
     }
     
     /**
-     * Create User
-     * Create new user.
+     * Создать нового пользователя (Admin only)
      * @param data The data for the request.
      * @param data.requestBody
      * @returns UserPublic Successful Response
@@ -280,8 +278,7 @@ export class UsersService {
     }
     
     /**
-     * Read User Me
-     * Get current user.
+     * Получить данные текущего пользователя
      * @returns UserPublic Successful Response
      * @throws ApiError
      */
@@ -293,8 +290,7 @@ export class UsersService {
     }
     
     /**
-     * Delete User Me
-     * Delete own user.
+     * Удалить текущего пользователя
      * @returns Message Successful Response
      * @throws ApiError
      */
@@ -306,8 +302,7 @@ export class UsersService {
     }
     
     /**
-     * Update User Me
-     * Update own user.
+     * Обновить данные текущего пользователя
      * @param data The data for the request.
      * @param data.requestBody
      * @returns UserPublic Successful Response
@@ -326,8 +321,7 @@ export class UsersService {
     }
     
     /**
-     * Update Password Me
-     * Update own password.
+     * Изменить пароль текущего пользователя
      * @param data The data for the request.
      * @param data.requestBody
      * @returns Message Successful Response
@@ -346,8 +340,7 @@ export class UsersService {
     }
     
     /**
-     * Register User
-     * Create new user without the need to be logged in.
+     * Регистрация нового пользователя
      * @param data The data for the request.
      * @param data.requestBody
      * @returns UserPublic Successful Response
@@ -366,8 +359,7 @@ export class UsersService {
     }
     
     /**
-     * Read User By Id
-     * Get a specific user by id.
+     * Получить пользователя по ID
      * @param data The data for the request.
      * @param data.userId
      * @returns UserPublic Successful Response
@@ -387,8 +379,7 @@ export class UsersService {
     }
     
     /**
-     * Update User
-     * Update a user.
+     * Обновить данные пользователя по ID (Admin only)
      * @param data The data for the request.
      * @param data.userId
      * @param data.requestBody
@@ -411,8 +402,7 @@ export class UsersService {
     }
     
     /**
-     * Delete User
-     * Delete a user.
+     * Удалить пользователя по ID (Admin only)
      * @param data The data for the request.
      * @param data.userId
      * @returns Message Successful Response

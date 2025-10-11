@@ -66,6 +66,54 @@ export type UserCreate = {
     is_active?: boolean;
     is_superuser?: boolean;
     full_name?: (string | null);
+    /**
+     * Путь к фото
+     */
+    photo_path?: (string | null);
+    /**
+     * Имя
+     */
+    first_name?: (string | null);
+    /**
+     * Фамилия
+     */
+    last_name?: (string | null);
+    /**
+     * Отчество
+     */
+    patronymic?: (string | null);
+    /**
+     * День рождения в формате DD-MM
+     */
+    birthday?: (string | null);
+    /**
+     * Телефон в формате +7XXXXXXXXXX
+     */
+    phone?: (string | null);
+    /**
+     * Должность
+     */
+    position?: (string | null);
+    /**
+     * Номер компьютера
+     */
+    computer_number?: (string | null);
+    /**
+     * Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)
+     */
+    status?: (string | null);
+    /**
+     * Проект
+     */
+    project?: (string | null);
+    /**
+     * Отдел
+     */
+    department?: (string | null);
+    /**
+     * Непосредственный руководитель
+     */
+    manager?: (string | null);
     password: string;
 };
 
@@ -74,6 +122,54 @@ export type UserPublic = {
     is_active?: boolean;
     is_superuser?: boolean;
     full_name?: (string | null);
+    /**
+     * Путь к фото
+     */
+    photo_path?: (string | null);
+    /**
+     * Имя
+     */
+    first_name?: (string | null);
+    /**
+     * Фамилия
+     */
+    last_name?: (string | null);
+    /**
+     * Отчество
+     */
+    patronymic?: (string | null);
+    /**
+     * День рождения в формате DD-MM
+     */
+    birthday?: (string | null);
+    /**
+     * Телефон в формате +7XXXXXXXXXX
+     */
+    phone?: (string | null);
+    /**
+     * Должность
+     */
+    position?: (string | null);
+    /**
+     * Номер компьютера
+     */
+    computer_number?: (string | null);
+    /**
+     * Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)
+     */
+    status?: (string | null);
+    /**
+     * Проект
+     */
+    project?: (string | null);
+    /**
+     * Отдел
+     */
+    department?: (string | null);
+    /**
+     * Непосредственный руководитель
+     */
+    manager?: (string | null);
     id: string;
 };
 
@@ -81,6 +177,54 @@ export type UserRegister = {
     email: string;
     password: string;
     full_name?: (string | null);
+    /**
+     * Путь к фото
+     */
+    photo_path?: (string | null);
+    /**
+     * Имя
+     */
+    first_name?: (string | null);
+    /**
+     * Фамилия
+     */
+    last_name?: (string | null);
+    /**
+     * Отчество
+     */
+    patronymic?: (string | null);
+    /**
+     * День рождения в формате DD-MM
+     */
+    birthday?: (string | null);
+    /**
+     * Телефон в формате +7XXXXXXXXXX
+     */
+    phone?: (string | null);
+    /**
+     * Должность
+     */
+    position?: (string | null);
+    /**
+     * Номер компьютера
+     */
+    computer_number?: (string | null);
+    /**
+     * Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)
+     */
+    status?: (string | null);
+    /**
+     * Проект
+     */
+    project?: (string | null);
+    /**
+     * Отдел
+     */
+    department?: (string | null);
+    /**
+     * Непосредственный руководитель
+     */
+    manager?: (string | null);
 };
 
 export type UsersPublic = {
@@ -93,11 +237,107 @@ export type UserUpdate = {
     is_active?: boolean;
     is_superuser?: boolean;
     full_name?: (string | null);
+    /**
+     * Путь к фото
+     */
+    photo_path?: (string | null);
+    /**
+     * Имя
+     */
+    first_name?: (string | null);
+    /**
+     * Фамилия
+     */
+    last_name?: (string | null);
+    /**
+     * Отчество
+     */
+    patronymic?: (string | null);
+    /**
+     * День рождения в формате DD-MM
+     */
+    birthday?: (string | null);
+    /**
+     * Телефон в формате +7XXXXXXXXXX
+     */
+    phone?: (string | null);
+    /**
+     * Должность
+     */
+    position?: (string | null);
+    /**
+     * Номер компьютера
+     */
+    computer_number?: (string | null);
+    /**
+     * Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)
+     */
+    status?: (string | null);
+    /**
+     * Проект
+     */
+    project?: (string | null);
+    /**
+     * Отдел
+     */
+    department?: (string | null);
+    /**
+     * Непосредственный руководитель
+     */
+    manager?: (string | null);
     password?: (string | null);
 };
 
 export type UserUpdateMe = {
     full_name?: (string | null);
+    /**
+     * Путь к фото
+     */
+    photo_path?: (string | null);
+    /**
+     * Имя
+     */
+    first_name?: (string | null);
+    /**
+     * Фамилия
+     */
+    last_name?: (string | null);
+    /**
+     * Отчество
+     */
+    patronymic?: (string | null);
+    /**
+     * День рождения в формате DD-MM
+     */
+    birthday?: (string | null);
+    /**
+     * Телефон в формате +7XXXXXXXXXX
+     */
+    phone?: (string | null);
+    /**
+     * Должность
+     */
+    position?: (string | null);
+    /**
+     * Номер компьютера
+     */
+    computer_number?: (string | null);
+    /**
+     * Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)
+     */
+    status?: (string | null);
+    /**
+     * Проект
+     */
+    project?: (string | null);
+    /**
+     * Отдел
+     */
+    department?: (string | null);
+    /**
+     * Непосредственный руководитель
+     */
+    manager?: (string | null);
     email?: (string | null);
 };
 

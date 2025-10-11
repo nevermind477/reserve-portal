@@ -304,6 +304,162 @@ export const UserCreateSchema = {
             ],
             title: 'Full Name'
         },
+        photo_path: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 500
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Photo Path',
+            description: 'Путь к фото'
+        },
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name',
+            description: 'Имя'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name',
+            description: 'Фамилия'
+        },
+        patronymic: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Patronymic',
+            description: 'Отчество'
+        },
+        birthday: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 5
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Birthday',
+            description: 'День рождения в формате DD-MM'
+        },
+        phone: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 12
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone',
+            description: 'Телефон в формате +7XXXXXXXXXX'
+        },
+        position: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Position',
+            description: 'Должность'
+        },
+        computer_number: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Computer Number',
+            description: 'Номер компьютера'
+        },
+        status: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Status',
+            description: 'Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)'
+        },
+        project: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Project',
+            description: 'Проект'
+        },
+        department: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Department',
+            description: 'Отдел'
+        },
+        manager: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager',
+            description: 'Непосредственный руководитель'
+        },
         password: {
             type: 'string',
             maxLength: 40,
@@ -346,6 +502,162 @@ export const UserPublicSchema = {
             ],
             title: 'Full Name'
         },
+        photo_path: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 500
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Photo Path',
+            description: 'Путь к фото'
+        },
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name',
+            description: 'Имя'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name',
+            description: 'Фамилия'
+        },
+        patronymic: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Patronymic',
+            description: 'Отчество'
+        },
+        birthday: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 5
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Birthday',
+            description: 'День рождения в формате DD-MM'
+        },
+        phone: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 12
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone',
+            description: 'Телефон в формате +7XXXXXXXXXX'
+        },
+        position: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Position',
+            description: 'Должность'
+        },
+        computer_number: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Computer Number',
+            description: 'Номер компьютера'
+        },
+        status: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Status',
+            description: 'Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)'
+        },
+        project: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Project',
+            description: 'Проект'
+        },
+        department: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Department',
+            description: 'Отдел'
+        },
+        manager: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager',
+            description: 'Непосредственный руководитель'
+        },
         id: {
             type: 'string',
             format: 'uuid',
@@ -382,6 +694,162 @@ export const UserRegisterSchema = {
                 }
             ],
             title: 'Full Name'
+        },
+        photo_path: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 500
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Photo Path',
+            description: 'Путь к фото'
+        },
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name',
+            description: 'Имя'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name',
+            description: 'Фамилия'
+        },
+        patronymic: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Patronymic',
+            description: 'Отчество'
+        },
+        birthday: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 5
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Birthday',
+            description: 'День рождения в формате DD-MM'
+        },
+        phone: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 12
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone',
+            description: 'Телефон в формате +7XXXXXXXXXX'
+        },
+        position: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Position',
+            description: 'Должность'
+        },
+        computer_number: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Computer Number',
+            description: 'Номер компьютера'
+        },
+        status: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Status',
+            description: 'Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)'
+        },
+        project: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Project',
+            description: 'Проект'
+        },
+        department: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Department',
+            description: 'Отдел'
+        },
+        manager: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager',
+            description: 'Непосредственный руководитель'
         }
     },
     type: 'object',
@@ -426,6 +894,162 @@ export const UserUpdateSchema = {
             ],
             title: 'Full Name'
         },
+        photo_path: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 500
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Photo Path',
+            description: 'Путь к фото'
+        },
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name',
+            description: 'Имя'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name',
+            description: 'Фамилия'
+        },
+        patronymic: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Patronymic',
+            description: 'Отчество'
+        },
+        birthday: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 5
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Birthday',
+            description: 'День рождения в формате DD-MM'
+        },
+        phone: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 12
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone',
+            description: 'Телефон в формате +7XXXXXXXXXX'
+        },
+        position: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Position',
+            description: 'Должность'
+        },
+        computer_number: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Computer Number',
+            description: 'Номер компьютера'
+        },
+        status: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Status',
+            description: 'Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)'
+        },
+        project: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Project',
+            description: 'Проект'
+        },
+        department: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Department',
+            description: 'Отдел'
+        },
+        manager: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager',
+            description: 'Непосредственный руководитель'
+        },
         password: {
             anyOf: [
                 {
@@ -457,6 +1081,162 @@ export const UserUpdateMeSchema = {
                 }
             ],
             title: 'Full Name'
+        },
+        photo_path: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 500
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Photo Path',
+            description: 'Путь к фото'
+        },
+        first_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'First Name',
+            description: 'Имя'
+        },
+        last_name: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Last Name',
+            description: 'Фамилия'
+        },
+        patronymic: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Patronymic',
+            description: 'Отчество'
+        },
+        birthday: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 5
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Birthday',
+            description: 'День рождения в формате DD-MM'
+        },
+        phone: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 12
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Phone',
+            description: 'Телефон в формате +7XXXXXXXXXX'
+        },
+        position: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Position',
+            description: 'Должность'
+        },
+        computer_number: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Computer Number',
+            description: 'Номер компьютера'
+        },
+        status: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 50
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Status',
+            description: 'Статус (в отпуске, в офисе, не в офисе, болеет, когда отпуск)'
+        },
+        project: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Project',
+            description: 'Проект'
+        },
+        department: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Department',
+            description: 'Отдел'
+        },
+        manager: {
+            anyOf: [
+                {
+                    type: 'string',
+                    maxLength: 255
+                },
+                {
+                    type: 'null'
+                }
+            ],
+            title: 'Manager',
+            description: 'Непосредственный руководитель'
         },
         email: {
             anyOf: [
