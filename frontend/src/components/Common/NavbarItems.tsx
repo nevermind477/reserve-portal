@@ -10,7 +10,7 @@ import type { UserPublic } from "@/client"
 const items = [
   { icon: FiHome, title: "Главная", path: "/" },
   { icon: FiBriefcase, title: "Объекты", path: "/items" },
-  { icon: FiSettings, title: "Команда", path: "/" },
+  { icon: FiSettings, title: "Команда", path: "/team" },
   { icon: FiSettings, title: "Документация", path: "/" },
   { icon: FiSettings, title: "Новости", path: "/" },
   { icon: FiSettings, title: "О сайте", path: "/about" },
