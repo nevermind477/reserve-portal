@@ -50,7 +50,21 @@ const EditUser = ({ user }: EditUserProps) => {
   } = useForm<UserUpdateForm>({
     mode: "onBlur",
     criteriaMode: "all",
-    defaultValues: user,
+    defaultValues: {
+      ...user,
+      first_name: user.first_name || "",
+      last_name: user.last_name || "",
+      patronymic: user.patronymic || "",
+      birthday: user.birthday || "",
+      phone: user.phone || "",
+      position: user.position || "",
+      computer_number: user.computer_number || "",
+      status: user.status || "",
+      project: user.project || "",
+      department: user.department || "",
+      manager: user.manager || "",
+      photo_path: user.photo_path || "",
+    },
   })
 
   const mutation = useMutation({
@@ -156,6 +170,53 @@ const EditUser = ({ user }: EditUserProps) => {
                   placeholder="Password"
                   type="password"
                 />
+              </Field>
+
+              <Field label="First name">
+                <Input {...register("first_name")} type="text" size="md" />
+              </Field>
+              <Field label="Last name">
+                <Input {...register("last_name")} type="text" size="md" />
+              </Field>
+              <Field label="Patronymic">
+                <Input {...register("patronymic")} type="text" size="md" />
+              </Field>
+              <Field label="Birthday">
+                <Input
+                  {...register("birthday")}
+                  type="text"
+                  size="md"
+                  placeholder="ДД-ММ"
+                />
+              </Field>
+              <Field label="Phone">
+                <Input
+                  {...register("phone")}
+                  type="text"
+                  size="md"
+                  placeholder="+7XXXXXXXXXX"
+                />
+              </Field>
+              <Field label="Position">
+                <Input {...register("position")} type="text" size="md" />
+              </Field>
+              <Field label="Computer number">
+                <Input {...register("computer_number")} type="text" size="md" />
+              </Field>
+              <Field label="Status">
+                <Input {...register("status")} type="text" size="md" />
+              </Field>
+              <Field label="Project">
+                <Input {...register("project")} type="text" size="md" />
+              </Field>
+              <Field label="Department">
+                <Input {...register("department")} type="text" size="md" />
+              </Field>
+              <Field label="Manager">
+                <Input {...register("manager")} type="text" size="md" />
+              </Field>
+              <Field label="Photo path">
+                <Input {...register("photo_path")} type="text" size="md" />
               </Field>
             </VStack>
 

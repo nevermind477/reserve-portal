@@ -39,6 +39,18 @@ const UserInformation = () => {
     defaultValues: {
       full_name: currentUser?.full_name,
       email: currentUser?.email,
+      first_name: currentUser?.first_name,
+      last_name: currentUser?.last_name,
+      patronymic: currentUser?.patronymic,
+      birthday: currentUser?.birthday,
+      phone: currentUser?.phone,
+      position: currentUser?.position,
+      computer_number: currentUser?.computer_number,
+      status: currentUser?.status,
+      project: currentUser?.project,
+      department: currentUser?.department,
+      manager: currentUser?.manager,
+      photo_path: currentUser?.photo_path,
     },
   })
 
@@ -116,6 +128,114 @@ const UserInformation = () => {
           ) : (
             <Text fontSize="md" py={2} truncate maxW="sm">
               {currentUser?.email}
+            </Text>
+          )}
+        </Field>
+        <Field label="First name">
+          {editMode ? (
+            <Input {...register("first_name")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.first_name || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Last name">
+          {editMode ? (
+            <Input {...register("last_name")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.last_name || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Patronymic">
+          {editMode ? (
+            <Input {...register("patronymic")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.patronymic || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Birthday">
+          {editMode ? (
+            <Input {...register("birthday")} type="text" size="md" placeholder="ДД-ММ" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.birthday || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Phone">
+          {editMode ? (
+            <Input {...register("phone")} type="text" size="md" placeholder="+7XXXXXXXXXX" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.phone || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Position">
+          {editMode ? (
+            <Input {...register("position")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.position || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Computer number">
+          {editMode ? (
+            <Input {...register("computer_number")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.computer_number || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Status">
+          {editMode ? (
+            <Input {...register("status")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.status || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Project">
+          {editMode ? (
+            <Input {...register("project")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.project || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Department">
+          {editMode ? (
+            <Input {...register("department")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.department || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Manager">
+          {editMode ? (
+            <Input {...register("manager")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.manager || "N/A"}
+            </Text>
+          )}
+        </Field>
+        <Field mt={4} label="Photo path">
+          {editMode ? (
+            <Input {...register("photo_path")} type="text" size="md" />
+          ) : (
+            <Text fontSize="md" py={2} truncate maxW="sm">
+              {currentUser?.photo_path || "N/A"}
             </Text>
           )}
         </Field>
