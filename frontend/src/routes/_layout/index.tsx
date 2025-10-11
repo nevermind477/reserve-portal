@@ -13,11 +13,15 @@ function Dashboard() {
   return (
     <Container maxW="full">
       <Box pt={12} m={4}>
-        <Text fontSize="2xl" truncate maxW="sm">
-          Hi, {currentUser?.full_name || currentUser?.email} 👋🏼
+        <Text fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }} fontWeight="bold" lineHeight="1.2">
+          Привет, {currentUser?.full_name || currentUser?.email} 👋🏼
         </Text>
-        <Text>Welcome back, nice to see you again!</Text>
+        <Text fontSize={{ base: "lg", md: "xl", lg: "2xl" }} color="fg.muted" lineHeight="1.6">
+          Добро пожаловать! Рады видеть вас снова в нашем корпоративном портале
+        </Text>
       </Box>
     </Container>
   )
 }
+
+export default Dashboard
